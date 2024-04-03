@@ -40,7 +40,7 @@ RightScore = 0
 # Constant
 #       (red, green, blue) 0 and 255
 WHITE = (255,255,255)
-BRIGHTYELLOW = (251, 222, 68)
+DARKGREY = (153, 153, 153)
 BLACK = (0, 0, 0)
 MEDIUMSAPPHIRE = (52, 89, 149)
 SUNSETORANGE = (251, 77, 61)
@@ -78,8 +78,8 @@ while GameRunning:
                 RPaddleUpOrDown = -3
             if event.key == K_SPACE:
                 if BallStopped == True and NewGame == False:
-                    dx = random.choice([-3,3])
-                    dy = random.choice([-3,3])
+                    dx = random.choice([-1,1])
+                    dy = random.choice([-1,1])
                     BallX = random.randint(300, 500) 
                     BallY = random.randint(100,500)
                     BallStopped = False
@@ -155,7 +155,7 @@ while GameRunning:
     screen.fill(MAGICPOWDER)
     
     pygame.draw.rect(screen, BLACK, (LeftSideOfNet,0,NetWidth,ScreenHeight))
-    pygame.draw.circle(screen, BRIGHTYELLOW, BallLocation, BallSize, BallSize)
+    pygame.draw.circle(screen, DARKGREY, BallLocation, BallSize, BallSize)
     
     RPaddleY += RPaddleUpOrDown
     RPaddle = (RPaddleX, RPaddleY, RPaddleW, RPaddleH)
